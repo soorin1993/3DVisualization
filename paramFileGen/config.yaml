@@ -1,0 +1,333 @@
+# Written By Soo Park 2016
+# parameters config file
+parameters:
+    # defines whether the method is ToF or CELIV
+    - method:
+        - defines whether the method is ToF or CELIV
+        - 0 # ToF
+        - 1 # CELIV
+        
+    # Number of nodes along the x-axis, y-axis, and z-axis
+    - SLength:
+        - Number of nodes along the x-axis, y-axis, and z-axis
+    - SWidth:
+        - Number of nodes along the x-axis, y-axis, and z-axis
+    - SHeight:
+        - Number of nodes along the x-axis, y-axis, and z-axis
+
+    # Defines whether sides are periodic or not
+    - PeriodicX:
+        - Defines whether sides are periodic or not
+        - 0 # non-periodic
+        - 1 # periodic
+    - PeriodicY:
+        - Defines whether sides are periodic or not
+        - 0
+        - 1
+    - PeriodicZ:
+        - Defines whether sides are periodic or not
+        - 0
+        - 1
+
+    # Defines over how many sample the system is periodic
+    # Note to Josh: I can make this either a drop down or just a manual input. 
+    # If the former, let me know how many values you'd like to have in it. For example, 10 is the max.
+    - EndX:
+        - Defines over how many sample the system is periodic
+        - 0 #infinite sample
+        - 1 # periodic accross 1 sample
+        - 2 # periodic accross 2 samples then reaches the edge 
+    - EndY:
+        - Defines over how many sample the system is periodic
+        - 0
+        - 1
+        - 2
+    - EndZ:
+        - Defines over how many sample the system is periodic
+        - 0 
+        - 1
+        - 2
+
+    # Defines whether electrodes exist on the x,y or z axis
+    - XElecOn:
+        - Defines whether electrodes exist on the x axis
+        - 0
+        - 1
+    - YElecOn:
+        - Defines whether electrodes exist on the y axis
+        - 0
+        - 1
+    - ZElecOn:
+        - Defines whether electrodes exist on the z axis
+        - 0
+        - 1
+
+    # Define the tunneling constant from the electrode [1/nm]
+    - alphaXb:
+        - Define the tunneling constant from the electrode [1/nm]
+    - alphaXf:
+        - Define the tunneling constant from the electrode [1/nm]
+    - alphaYl:
+        - Define the tunneling constant from the electrode [1/nm]
+    - alphaYr:
+        - Define the tunneling constant from the electrode [1/nm]
+    - alphaZb:
+        - Define the tunneling constant from the electrode [1/nm]
+    - alphaZa:
+        - Define the tunneling constant from the electrode [1/nm]
+
+    # Relative Permittivity (PCBM 3.9)
+    - RelativePermittivity:
+        - Relative Permittivity (PCBM 3.9)
+
+    # Define the work function of the electrodes [eV]
+    - workX:
+        - Define the work function of the electrodes [eV]
+    - workY:
+        - Define the work function of the electrodes [eV]
+    - workZ:
+        - Define the work function of the electrodes [eV]
+    
+    # Define the electron affinity of medium [eV]
+    - electronAffin:
+        - Define the electron affinity of medium [eV]
+
+    # Define the ionization energy of medium [eV]
+    - ionizationEnergy:
+        - Define the ionization energy of medium [eV]
+
+    # Define the attempt to hop rate from the electrode [1/s]
+    - vX:
+        - Define the attemp to hop rate from the electrode [1/s]
+    - vY:
+        - Define the attemp to hop rate from the electrode [1/s]
+    - vZ:
+        - Define the attemp to hop rate from the electrode [1/s]
+
+    # Define Fermi Energy level of the electrodes so we can calculate the rates
+    # on and off electrodes [eV]
+    # If the Electrodes are not turned on this value will not be used
+    - XFermiB:
+        - Define Fermi Energy level of the electrodes so we can calculate the rates on and off electrodes [eV]. If the electrodes are not tunred on this value will not be used
+    - XFermiF:
+        - Define Fermi Energy level of the electrodes so we can calculate the rates on and off electrodes [eV]. If the electrodes are not tunred on this value will not be used
+    - YFermiL:
+        - Define Fermi Energy level of the electrodes so we can calculate the rates on and off electrodes [eV]. If the electrodes are not tunred on this value will not be used
+    - YFermiR:
+        - Define Fermi Energy level of the electrodes so we can calculate the rates on and off electrodes [eV]. If the electrodes are not tunred on this value will not be used
+    - ZFermiB:
+        - Define Fermi Energy level of the electrodes so we can calculate the rates on and off electrodes [eV]. If the electrodes are not tunred on this value will not be used
+    - ZFermiA:
+        - Define Fermi Energy level of the electrodes so we can calculate the rates on and off electrodes [eV]. If the electrodes are not tunred on this value will not be used
+
+
+    # Image charge effect 
+    - ImageCharge:
+        - Image charge effect
+        - 0 # On
+        - 1 # Off
+
+    # Define intrinsic Fermi Energy level of the material. Must be defined for CELIV method 
+    # where charges are present as a result of thermal equilibrium. [eV]
+    # We are assuming the carrier is an electron.
+    - IntrinsicFermi:
+        -  Define intrinsic Fermi Energy level of the material. Must be defined for CELIV method where charges are present as a result of thermal equilibrium [eV]. We are assuming the carrier is an electron.
+  
+    # Voltage accross a single system in x, y, and z [V]
+    - VoltageX:
+        - Voltage accross a single system in x [V]
+    - VoltageY:
+        - Voltage accross a single system in y [V]
+    - VoltageZ:
+        - Voltage accross a single system in z [V]
+
+    # Voltage ramp steps x, y and z
+    - VStepX:
+        - Voltage ramp steps x [V]
+    - VStepY:
+        - Voltage ramp steps y [V]
+    - VStepZ:
+        - Voltage ramp steps z [V]
+
+    # Voltage ramp increment x, y, and z [V]
+    - VincX:
+        - Voltage ramp increment x [V]
+    - VincY:
+        - Voltage ramp increment y [V]
+    - VincZ:
+        - Voltage ramp increment z [V]
+
+    # Distance between nodes in units of [m]
+    - SiteDistance:
+        - Distance between nodes in units of [m]
+
+    # Dimension to fit real data
+    - D:
+        - Dimenstion to fit real data
+
+    # Total number of time steps in which charges are injected
+    - TCount:
+        - Total number of time steps in which charges are injected
+        
+    # Number of charges injected per time step
+    - NCh:
+        - Number of charges injected per time step
+
+    # Total number of charges passed through the system
+    - Ntot:
+        - Total number of charges passed through the system
+
+    # Time between injections of charges [s]
+    - TStep:
+        - Time between injections of charges [s]
+        
+    # Number of time steps that pass before data is averaged
+    - Nstep_av:
+        - Number of time steps that pass before data is averaged
+
+    # Amount of time before a checkpoint file is created in minutes
+    - Time_check: 
+        - Amount of time before a checkpoint file is created in minutes
+
+    # Number of iterations with different random seeds
+    - Rcount:
+        - Number of iterations with different random seeds
+
+    # Turn on Cluster Algorithm 2, Leave off 0, whatever is optimal 1
+    - ClusterAlg:
+        - Turn on Cluster Algorithm 2, Leave off 0, whatever is optimal 1
+
+    # Defines the cutoff radius for the correlation function
+    # CutOffDistance CutOff*lambda
+    # lambda is used in the correlation function
+    - CutOff: 
+        - Defines the cutoff radius for the correlation function. CutOffDistance CutOff*lambda
+    - lambda:
+        - lambda is used in the correlation function
+
+    # Scale if this is on (ScaleAfterCorr-1) then after the energies
+    # are correlated they will be scaled so that they have the same
+    # Full width half maximum value of the original gaussian
+    - ScaleAfterCorr:
+        - Scale if this is on (ScaleAfterCorr-1) then after the energies are correlated they will be scaled so that they have the same. Full width half maximum value of the original gaussian
+
+    # Seed Protocol is used to determine how the energies are
+    # spread out between the sites. 
+    # 0 - means averaged by surrounding seeds
+    # 1 - means averaged with closest seeds
+    # 2 - means averaged by closest seed but energy of seed
+    #		 sites are all the same, Using Average site energy E0
+    #		 to describe the seed energies.
+    - SeedProt:
+        - Seed Protocol is used to determine how the energies are spread out between the sites. 0 - means averaged by surrounding seeds / 1 - means averaged with closest seeds / 2 - means averaged by closest seed but energy of seed. Sites are all the same, Using Average site energy E0 to describe the seed energies.
+
+    # How many numerical iterations should be used to approximate
+    # cluster behavior (Default to 15% should be less than 5% error)
+    - Attempts:
+        - How many numerical iterations should be used to approximate cluster behavior (Default to 15% should be less than 5% error)
+
+    # What fraction of sites act as seeds
+    - fracSeed:
+        - What fraction of sites act as seeds
+    
+    # Average site energy [eV]
+    - E0:
+        - Average site energy [eV]
+
+    # Standard deviation of the site energy
+    - sigma:
+        - Standard deviation of the site energy
+
+    # What fraction of sites act as traps
+    - fracTrap:
+        - What fraction of sites act as traps
+
+    # Average site energy of trap [eV]
+    - Etrap: 
+        - Average site energy of trap [eV]
+
+    # Standard deviation of trap energy
+    - Tsigma: 
+        - Standard deviation of trap energy
+
+    # Attempt to hop rate [1/s] equates to Markus at 300K
+    - AttemptToHop:
+        - Attempt to hop rate [1/s] equates to Markus at 300K
+
+    # Temperature [k]
+    - TempStart:
+        - Temperature [k]
+
+    #Temperature steps
+    - TemperatureStep:
+        - Temperature steps
+    
+    #Temperature increment [K]
+    - TemperatureInc:
+        - Temperature increment [K]
+     
+    #Re-organization energy [eV]
+    - reOrgEnergy:
+        - Re-organization energy [eV]
+    
+    # Tunneling constant [1/nm]
+    - gamma:
+        - Tunneling constant [1/nm]
+
+    # Movie Frames 
+    - MovieFrames:
+        - Movie Frames
+
+    # Cutoff Time of Simulation [s]
+    # value of 0 means there is no cut off time
+    - CutOffTime:
+        - Cutoff Time of Simulation [s] value of 0 means there is no cut off time
+
+    ##############if CELIV##############
+
+    # Final time [s]. After the final time the voltage is cut off
+    - Tcv: 
+        - Final time [s]. After the final time the voltage is cut off
+
+    # Final voltage
+    - Vcv:
+        - Final Voltage
+
+    #Lag Time [s]. How much longer does the simulation run after 
+    #the voltage is cut
+    - Tlag: 
+        - Lag Time [s]. How much longer does the simulation run after the voltage is cut
+
+    #############File Generation Options#################
+
+    #Charge End point File .endpt file
+    #File prints out the time it takes a charge
+    #to reach the electrode or the position it is
+    #at when the simulation ends, it is a more 
+    #accurate way to measure the mobility if not all
+    #the charges reach the electrode by the cut off time
+    #1 Generate File
+    #2 Do not generate File
+    - EndPtFile:
+        - File prints out the time it takes a charge to reach the electrode or the position it is at when the simulation ends, it is a more accurate way to measure the mobility if not all the charges reach the electrode by the cut off time. 1 - Generate File / 2 - Do not generate File
+
+    #Charge path file .path file
+    #File prints out the position of a chosen number of
+    #charges as they move through the system
+    #File format is as follows
+    #xposition yposition zposition chargeid TimeSpentOnSite GlobalTime
+    - NumChargesTrack:
+        - foobar
+    - PathFile:
+        - foobar
+
+    #Log File .log
+    #File contains information of interest of the simulation
+    #1 Generate File
+    #0 Do not generate file
+    - LogFile:
+        - Log File (.log). File contains information of interest of the simulation. 1 - Generate File / 0 - Do not generate file
+
+
+
+   
